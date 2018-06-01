@@ -1,0 +1,100 @@
+<div class="login">
+    <div class="centerregister">
+        <div class="jumbotron text-center">
+            <p>{{ tagline }}</p>
+
+            <form  role="form" class="form-horizontal" name="registerForm" novalidate>
+                <div class="form-group" ng-class="{ 'has-error' :registerForm.firstname.$invalid && !registerForm.firstname.$pristine || registerForm.lastname.$invalid && !registerForm.lastname.$pristine}">
+                    <label for="name" class="col-sm-2 control-label">Name</label>
+                    <div id="name" class="col-sm-8">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <select class="form-control">
+                                    <option>Mr.</option>
+                                    <option>Ms.</option>
+                                    <option>Mrs.</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-5">
+                                <input type="text" name="firstName" class="form-control" ng-model="firstname" placeholder="First Name" required/><br>
+                                <span class="help-block" ng-show="registerForm.firstname.$invalid && !registerForm.firstname.$pristine">
+                            </div>
+                            <div class="col-md-5">
+                                <input type="text" name="lastname" class="form-control" ng-model="lastname" placeholder="Last Name" required/><br>
+                                <span class="help-block" ng-show="registerForm.lastname.$invalid && !registerForm.lastname.$pristine">
+                             </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : registerForm.email.$invalid && !registerForm.email.$pristine }">
+                    <label for="email" class="col-sm-2 control-label">
+                        Email</label>
+                    <div class="col-sm-8">
+                        <input type="email" name="email" class="form-control" ng-model="email" id="email" placeholder="Email" required/>
+                        <br><span class="help-block" ng-show="registerForm.email.$invalid && !registerForm.email.$pristine">Valid email is required.</span>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : registerForm.mobile.$invalid && !registerForm.mobile.$pristine }">
+                    <label for="mobile" class="col-sm-2 control-label">
+                        Mobile</label>
+                    <div class="col-sm-8">
+                        <input  class="form-control" name="mobile" ng-model="mobile" id="mobile" placeholder="Mobile" required/>
+                        <br><span class="help-block" ng-show="registerForm.mobile.$invalid && !registerForm.mobile.$pristine">Valid mobile is required.</span>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error' : registerForm.username.$invalid && !registerForm.username.$pristine }">
+                    <label for="username" class="col-sm-2 control-label">
+                        User Name</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" name="username" ng-model="username" id="username" placeholder="User Name" required/>
+                        <br><span class="help-block" ng-show="registerForm.username.$invalid && !registerForm.mobile.$pristine">Valid username is required.</span>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : registerForm.password.$invalid && !registerForm.password.$pristine }">
+                    <label for="password" class="col-sm-2 control-label">
+                        Password</label>
+                    <div class="col-sm-8">
+                        <input type="password" name="password" class="form-control" ng-model="password" id="password" placeholder="Password" required/>
+                        <br><span class="help-block" ng-show="registerForm.password.$invalid && !registerForm.password.$pristine">Valid password is required.</span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+
+                        <button type="button" class="btn btn-primary btn-sm" ng-click="create(firstname,lastname,email,username,password,mobile)" ng-disabled="registerForm.$invalid">Register</button>
+                        <!--<button type="button" class="btn btn-default btn-sm">Cancel</button>-->
+                    </div>
+                </div>
+
+            </form>
+
+
+
+
+            <div ng-if="registrationStatus=='Regisration is successfull. Now Login to begin'" class="alert alert-success">
+                <strong>    {{ registrationStatus }} </strong>
+            </div>
+            <div ng-if="registrationStatus=='Registration failed. Try again Later'" class="alert alert-danger">
+                <strong>    {{ registrationStatus }} </strong>
+            </div>
+            <a ng-controller="RegisterController" ng-if="registrationStatus=='Regisration is successfull. Now Login to begin'" class="btn btn-success btn-sm" href="/login">LOGIN</a>
+
+
+
+        </div>
+    </div>
+
+</div>
+
+
+<link rel="stylesheet" type="text/css" href="css/login.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">

@@ -1,0 +1,39 @@
+.login {
+    height: 800px;
+    width: 100%;
+	background-image: url("loginimage.jpg");
+	background-repeat: repeat-y;
+
+}
+.center {
+    margin: 0;
+	position:absolute;
+	top:200px;
+	left:200px;
+    width: 70%;
+
+    /*padding: 2px;*/
+}
+
+/*.img*/
+/*{*/
+	 /*background-image: url("images/loginimage.jpg");*/
+/*}*/
+.centerregister {
+    margin: 0;
+	position:absolute;
+	top:80px;
+	left:200px;
+    width: 70%;
+   
+    /*padding: 2px;*/
+}
+.jumbotron
+{
+	background:rgba(0,0,0,0.3);
+	color:white;
+}
+
+.container{
+    padding: 0px;
+}

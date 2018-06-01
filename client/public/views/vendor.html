@@ -1,0 +1,140 @@
+
+<div class="login">
+    <div class="center">
+       <div class="jumbotron text-center">
+         <h3>Add Vendors</h3>
+           <form role="form" class="form-horizontal">
+            <div class="form-group">
+               <label for="name1" class="col-sm-2 control-label">Name</label>
+                <div id="name1" class="col-sm-8">
+                  <div class="row">
+                    <div class="col-md-4">
+                        <select class="form-control">
+                            <option>Mr.</option>
+                            <option>Ms.</option>
+                            <option>Mrs.</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" id="firstname" ng-model="firstname" placeholder="Name" required/>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">
+                Address</label>
+            <div class="col-sm-8">
+                <input type="email" class="form-control" ng-model="email" id="email" placeholder="Email" required/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="mobile" class="col-sm-2 control-label">
+                Mobile</label>
+            <div class="col-sm-8">
+                <input  class="form-control" ng-model="mobile" id="mobile" placeholder="Mobile" required/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description" class="col-sm-2 control-label">
+                Description</label>
+            <div class="col-sm-8">
+                <input class="form-control" ng-model="description" id="description" placeholder="description" required/>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="vendorType" class="col-sm-2 control-label">
+                Vendor Type</label>
+            <div class="col-sm-8">
+                <select class="form-control" id="vendorType" ng-model="vendorType">
+                    <option>Photographer</option>
+                    <option>Caterer</option>
+                    <option>Venue</option>
+                    <option>Decoration</option>
+                    <option>Make Up Artist</option>
+
+                </select>
+                <!--<input type="vendorType" class="form-control" ng-model="vendorType" id="vendorType" placeholder="Vendor Type" required/>-->
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="vendorEvenType" class="col-sm-2 control-label">
+                Vendor Event Type</label>
+            <div class="col-sm-8">
+                <select class="form-control" id="vendorEvenType" ng-model="vendorEvenType">
+                    <option>Wedding</option>
+                    <option>Baby Shower</option>
+                    <option>Graduation</option>
+                    <option>Party</option>
+                    <option>Birthday Party</option>
+
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="imageName" class="col-sm-2 control-label">
+                Select Image</label>
+            <div class="col-sm-4">
+                <!--<input  class="form-control" ng-model="imageName" id="imageName" placeholder="Image" required/>-->
+                <select class="form-control" id="imageName" ng-model="imageName">
+                    <option>photographers/photo_wed1.jpg</option>
+                    <option>photographers/photo_wed2.jpg</option>
+                    <option>photographers/photo_wed3.jpg</option>
+                    <option>photographers/photo_wed4.jpg</option>
+                    <option>photographers/photo_wed5.jpg</option>
+                    <option>photographers/photo_wed6.jpg</option>
+                    <option>Caterers/bir-2.jpg</option>
+                    <option>Caterers/bir-3.jpg</option>
+                    <option>Caterers/bir-4.jpg</option>
+                    <option>Caterers/bir-5.jpg</option>
+                    <option>Caterers/grad 1.jpg</option>
+                    <option>Caterers/par-1.jpg</option>
+                    <option>Caterers/wed-3.jpg</option>
+                    <option>venues/bir-1.jpg</option>
+                    <option>venues/bir-2.jpg</option>
+                    <option>venues/bir-3.jpg</option>
+                    <option>venues/bir-4.jpg</option>
+                    <option>venues/bir-5.jpg</option>
+                    <option>venues/bir-6.jpg</option>
+                    <option>venues/bir-7.jpg</option>
+                    <option>partydec2.png</option>
+                    <option>partydec5.png</option>
+                    <option>wedding venue.jpg</option>
+                    <option>wedding-decorjpg</option>
+
+                </select>
+
+                <button type="button" class="btn btn-primary btn-sm" ng-click="create(firstname,email,mobile,description,vendorType,vendorEvenType,imageName)">Register</button>
+
+            </div>
+            <div class="col-sm-4">
+            <img src=images/{{imageName}} ng-bind="imageName" class="img-responsive" alt="wedding-photography-image"/>
+            </div>
+
+
+        </div>
+
+
+          </form>
+
+
+         <div ng-if="additionStatus=='Vendor has been added successfully!!'" class="alert alert-success">
+        <strong>    {{ additionStatus }} </strong>
+         </div>
+         <div ng-if="additionStatus=='Action Failed.Internal Error'" class="alert alert-danger">
+        <strong>    {{ additionStatus }} </strong>
+          </div>
+       </div>
+    </div>
+</div>
+<link rel="stylesheet" type="text/css" href="css/login.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">

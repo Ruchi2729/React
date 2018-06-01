@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<base href="/">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+
+	<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+	<!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+	<link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
+	<link rel="stylesheet" href="css/gallary.css">
+
+	<script src="libs/jquery/dist/jquery.js"></script>
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+
+
+
+	<!-- JS -->
+	<script src="libs/angular/angular.min.js"></script>
+	<script src="libs/angular-route/angular-route.min.js"></script>
+
+
+
+	 <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>-->
+
+	<!-- ANGULAR CUSTOM -->
+	<script src="js/controllers/MainCtrl.js"></script>
+	<script src="js/controllers/NerdCtrl.js"></script>
+	<script src="js/controllers/LoginCtrl.js"></script>
+	<script src="js/controllers/RegisterCtrl.js"></script>
+	<script src="js/services/NerdService.js"></script>
+	<script src="js/controllers/GeekCtrl.js"></script>
+	<script src="js/services/GeekService.js"></script>
+	<script src="js/services/UserService.js"></script>
+	<script src="js/controllers/VendorCtrl.js"></script>
+	<script src="js/controllers/CartCtrl.js"></script>
+
+	<script src="js/appRoutes.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/services/VendorService.js"></script>
+	<script src="js/navbar.js"></script>
+
+	<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+	<!-- VIDEO SCRIPT SCRIPTS  -->
+	<!--<script type="text/javascript" src="js/jquery.mb.YTPlayer.js"></script>-->
+	<!--&lt;!&ndash; WATER WHEEL &ndash;&gt;-->
+	<!--<script type="text/javascript" src="js/jquery.waterwheelCarousel.js"></script>-->
+
+	<!--&lt;!&ndash; CUSTOM SCRIPTS  &ndash;&gt;-->
+	<!--<script src="js/custom.js"></script>-->
+
+	<title>Elite Events</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+
+
+	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<!-- Custom stylesheet -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- Font-Awesome Icons Styles -->
+	<link href="css/font-awesome.css" rel="stylesheet" />
+
+	<link rel="stylesheet" type="text/css" href="css/slick.css">
+	<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+
+	<!-- GOOGLE FONT -->
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+
+
+
+</head>
+<body ng-app="sampleApp">
+
+<div class="navbar navbar-fixed-top">
+	<div class="container">
+
+		<div class="navbar-header ">
+
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+
+		<div class="navbar-collapse collapse move-me">
+
+			<ul class="nav navbar-nav left">
+				<li><a class="welcometitle" href="#" ng-if="user!=null">WELCOME {{user.firstname}}</a></li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right" id="dropnav">
+					<!--<li><a href="#" ng-if="user!=null">WELCOME {{user.firstname}}</a></li>-->
+					<li><a href="/">HOME</a></li>
+				<li><a href="#portfolio">PACKAGES</a>
+					<ul>
+						<li><a href="#">Wedding</a>
+							<ul id="submenu">
+								<li><a href="/goldwedding">Gold</a></li>
+								<li><a href="#">Silver</a></li>
+								<li><a href="#">Platinum</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Baby Shower</a>
+							<ul id="submenu2">
+								<li><a href="#">Gold</a></li>
+								<li><a href="#">Silver</a></li>
+								<li><a href="#">Platinum</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Birthday</a>
+							<ul id="submenu3">
+								<li><a href="#">Gold</a></li>
+								<li><a href="#">Silver</a></li>
+								<li><a href="#">Platinum</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Graduation</a>
+							<ul id="submenu4">
+								<li><a href="#">Gold</a></li>
+								<li><a href="#">Silver</a></li>
+								<li><a href="#">Platinum</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+
+					<li class="float-rightdiv"><a href="/gototestimonials">SUCCESS STORIES</a></li>
+
+					<li class="float-rightdiv"><a ng-controller="LoginController" ng-if="user!=null" ng-click="logout()"><span class="glyphicon glyphicon-log-in"></span> LOGOUT</a></li>
+
+
+					<li class="float-rightdiv"><a ng-controller="LoginController" ng-if="user==null" href="/login"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
+					<li class="float-rightdiv"><a ng-controller="LoginController" ng-if="user.usertype=='admin' && user!=null" href="/createVendor"><span class="glyphicon glyphicon-plus"></span> ADD VENDORS</a></li>
+					<li class="float-rightdiv"><a ng-controller="LoginController" ng-if="user.usertype=='user' && user!=null && cart==null" href="/showCart"><span class="glyphicon glyphicon-shopping-cart"></span> CART</a></li>
+					<!-- code to render the regular video block -->
+					<li class="float-rightdiv"><a ng-controller="LoginController" ng-if="user.usertype=='user' && user!=null && cart!=null" href="/showCart"><span class="glyphicon glyphicon-shopping-cart carticon"></span><span class="glyphicon glyphicon-plus"></span>CART</a></li>
+
+				</ul>
+
+
+			</ul>
+		</div>
+
+	</div>
+</div>
+
+
+
+<div ng-view></div>
+
+
+
+</body>
+
+</html>

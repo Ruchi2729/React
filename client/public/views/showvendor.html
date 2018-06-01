@@ -1,0 +1,472 @@
+<!-- Wedding section -->
+<div class="container">
+ <div class="col-md-12"><h1 class="text-center"><br/><br/><br/>Photographers</h1></div>
+    <div class="col-md-8 col-md-offset-2" id="photo">
+
+        <div id="WedCarousel" class="jcarousel-wrapper" data-ng-init="getVendors('Photographer','Wedding')">
+            <div class="jcarousel">
+                <ul>
+                    <li ng-repeat="vendor in pvendors"><figure><img ng-click="showDetailsWP(vendor)"  src=images/{{vendor.imageName}} class="img-responsive" alt="wedding-photography-image"/>
+                        <figcaption>{{vendor.firstname}}</figcaption></figure></li>
+
+
+                </ul>
+            </div>
+
+            <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+            <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+        </div>
+    </div>
+
+
+    <div class="toggle-details" ng-show="showWeddingPhotographer" style="border : 5px black;">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2" id="highlightDiv">
+                <br>
+                <br>
+                <div class="product">
+                <div class="col-xs-6" >
+                    <img src=images/{{clickedVendor.imageName}} class="img-responsive">
+                </div>
+
+                <div class="col-xs-5">
+                    <p><strong>Name:</strong> {{clickedVendor.firstname}}</p>
+                    <p><strong>Information:</strong>{{clickedVendor.description}}</p>
+                    <div style='overflow-x:auto; height:180px;'>
+                        <div class="well well-sm">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img  src="images/photographers/c1.jpg" class="media-object" height="50" width="50">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Person 1</h4>
+                                    <p>Did a great job!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="well well-sm">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="images/photographers/c2.jpg" class="media-object" height="50" width="50">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Person 2</h4>
+                                    <p>One of our best experience with him!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="well well-sm">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="images/photographers/c3.jpg" class="media-object" height="50" width="50">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Person 3</h4>
+                                    <p>Highly recommend his work...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="commentSection">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                    <p>Would you like to rate the photographer?</p>
+                                    <fieldset class="rating">
+                                        <input type="radio" id="star5" name="rating" value="5" />
+                                        <label for="star5" title="Excellent">5 stars</label>
+                                        <input type="radio" id="star4" name="rating" value="4" />
+                                        <label for="star4" title="Pretty good">4 stars</label>
+                                        <input type="radio" id="star3" name="rating" value="3" />
+                                        <label for="star3" title="Meh">3 stars</label>
+                                        <input type="radio" id="star2" name="rating" value="2" />
+                                        <label for="star2" title="Kinda bad">2 stars</label>
+                                        <input type="radio" id="star1" name="rating" value="1" />
+                                        <label for="star1" title="Sucks big time">1 star</label>
+                                    </fieldset>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-show="cartMsg" class="alert alert-success">
+                        <strong> This photographer is added to your event shopping cart </strong>
+                    </div>
+                    <div class="venbuttons">
+                        <button  class="btn btn-primary btn-sm" ng-disabled="user.usertype!='user' && user==null" ng-click="addCart()"><span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart</button> &nbsp; &nbsp; <a class="btn btn-primary btn-sm"  href="/showgal" ><span class="glyphicon glyphicon-picture"></span>View Gallery</a>
+                    </div>
+
+                 </div>
+
+                  <div class="col-xs-1">
+                    <span id="closeMe" ng-click="closeMe()" class="glyphicon glyphicon-remove"></span>
+                  </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--Caterer Section-->
+
+
+
+
+    <div class="col-md-12"><h1 class="text-center">Caterers</h1></div>
+    <div class="col-md-8 col-md-offset-2" id="caterer">
+
+        <div id="pjc2" class="jcarousel-wrapper" data-ng-init="getVendors('Caterer','Wedding')">
+            <div class="jcarousel">
+                <ul>
+                    <li ng-repeat="vendor in cvendors"><figure><img ng-click="showDetailsCP(vendor)"  src=images/{{vendor.imageName}} class="img-responsive" alt="wedding-photography-image"/>
+                        <figcaption>{{vendor.firstname}}</figcaption></figure></li>
+                </ul>
+            </div>
+
+            <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+            <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+        </div>
+    </div>
+
+    <div class="toggle-details" ng-show="showCaterer" style="border : 5px black;">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2" id="highlightDiv">
+                <br>
+                <br>
+                <div class="product">
+                  <div class="col-xs-6">
+                    <img src=images/{{clickedVendor.imageName}} class="img-responsive">
+                  </div>
+
+                 <div class="col-xs-5">
+                    <p><strong>Name :</strong> {{clickedVendor.firstname}}</p>
+                    <p><strong>Information :</strong> {{clickedVendor.description}}</p>
+                    <div style='overflow-x:auto; height:180px;'>
+                        <div class="well well-sm">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img  src="images/photographers/c1.jpg" class="media-object" height="50" width="50">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Person 1</h4>
+                                    <p>Did a great job!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="well well-sm">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="images/photographers/c2.jpg" class="media-object" height="50" width="50">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Person 2</h4>
+                                    <p>One of our best experience with him!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="well well-sm">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="images/photographers/c3.jpg" class="media-object" height="50" width="50">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Person 3</h4>
+                                    <p>Highly recommend his work...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="commentSection">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                    <p>Would you like to rate the photographer?</p>
+                                    <fieldset class="rating">
+                                        <input type="radio" id="star5" name="rating" value="5" />
+                                        <label for="star5" title="Excellent">5 stars</label>
+                                        <input type="radio" id="star4" name="rating" value="4" />
+                                        <label for="star4" title="Pretty good">4 stars</label>
+                                        <input type="radio" id="star3" name="rating" value="3" />
+                                        <label for="star3" title="Meh">3 stars</label>
+                                        <input type="radio" id="star2" name="rating" value="2" />
+                                        <label for="star2" title="Kinda bad">2 stars</label>
+                                        <input type="radio" id="star1" name="rating" value="1" />
+                                        <label for="star1" title="Sucks big time">1 star</label>
+                                    </fieldset>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-show="cartMsg" class="alert alert-success">
+                        <strong> This photographer is added to your event shopping cart </strong>
+                    </div>
+                     <div class="venbuttons">
+                     <button  class="btn btn-primary btn-sm" ng-disabled="user.usertype!='user' && user==null" ng-click="addCart()"><span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart</button> &nbsp; &nbsp; <a class="btn btn-primary btn-sm"  href="/showgal" ><span class="glyphicon glyphicon-picture"></span>View Gallery</a>
+                     </div>
+
+                 </div>
+                <div class="col-xs-1">
+                    <span id="closeMe" ng-click="closeMe()" class="glyphicon glyphicon-remove"></span>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--Venue-->
+
+
+
+
+    <div class="col-md-12"><h1 class="text-center">Venue</h1></div>
+    <div class="col-md-8 col-md-offset-2" id="venue">
+
+        <div id="pjc3" class="jcarousel-wrapper" data-ng-init="getVendors('Venue','Wedding')">
+            <div class="jcarousel">
+                <ul>
+                    <!--<li ng-repeat="vendor in vvendors"><figure><img ng-click="showDetailsV(vendor)"  src=images/{{vendor.imageName}} class="img-responsive" alt="wedding-photography-image"/>-->
+                        <!--<figcaption>{{vendor.firstname}}</figcaption></figure></li>-->
+                    <li ng-repeat="vendor in vvendors"><figure><img ng-click="showDetailsV(vendor)"  src=images/{{vendor.imageName}} class="img-responsive" alt="wedding-photography-image"/>
+                        <figcaption>{{vendor.firstname}}</figcaption></figure></li>
+
+                </ul>
+            </div>
+
+            <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+            <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+        </div>
+    </div>
+
+    <div class="toggle-details" ng-show="showVenue" style="border : 5px black;">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2" id="highlightDiv">
+                <br>
+                <br>
+                <div class="product">
+                <div class="col-xs-6">
+                    <img src=images/{{clickedVendor.imageName}} class="img-responsive">
+                </div>
+
+                <div class="col-xs-5">
+                    <p><strong>Name :</strong> {{clickedVendor.firstname}}</p>
+                    <p><strong>Information :</strong> {{clickedVendor.description}}</p>
+                    <div style='overflow-x:auto; height:180px;'>
+                        <div class="well well-sm">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img  src="images/photographers/c1.jpg" class="media-object" height="50" width="50">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Person 1</h4>
+                                    <p>Did a great job!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="well well-sm">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="images/photographers/c2.jpg" class="media-object" height="50" width="50">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Person 2</h4>
+                                    <p>One of our best experience with him!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="well well-sm">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="images/photographers/c3.jpg" class="media-object" height="50" width="50">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Person 3</h4>
+                                    <p>Highly recommend his work...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="commentSection">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                    <p>Would you like to rate the photographer?</p>
+                                    <fieldset class="rating">
+                                        <input type="radio" id="star5" name="rating" value="5" />
+                                        <label for="star5" title="Excellent">5 stars</label>
+                                        <input type="radio" id="star4" name="rating" value="4" />
+                                        <label for="star4" title="Pretty good">4 stars</label>
+                                        <input type="radio" id="star3" name="rating" value="3" />
+                                        <label for="star3" title="Meh">3 stars</label>
+                                        <input type="radio" id="star2" name="rating" value="2" />
+                                        <label for="star2" title="Kinda bad">2 stars</label>
+                                        <input type="radio" id="star1" name="rating" value="1" />
+                                        <label for="star1" title="Sucks big time">1 star</label>
+                                    </fieldset>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-show="cartMsg" class="alert alert-success">
+                        <strong> This photographer is added to your event shopping cart </strong>
+                    </div>
+                    <div class="venbuttons">
+                        <button  class="btn btn-primary btn-sm" ng-disabled="user.usertype!='user' && user==null" ng-click="addCart()"><span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart</button> &nbsp; &nbsp; <a class="btn btn-primary btn-sm"  href="/showgal" ><span class="glyphicon glyphicon-picture"></span>View Gallery</a>
+                    </div>
+
+                </div>
+                <div class="col-xs-1">
+                    <span id="closeMe" ng-click="closeMe()" class="glyphicon glyphicon-remove"></span>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Decoration-->
+
+
+
+
+    <div class="col-md-12"><h1 class="text-center">Decoration</h1></div>
+    <div class="col-md-8 col-md-offset-2 decoration">
+
+        <div id="pjc4" class="jcarousel-wrapper" data-ng-init="getVendors('Decoration','Wedding')">
+            <div class="jcarousel">
+                <ul>
+                    <!--<li ng-repeat="vendor in dvendors"><figure><img ng-click="showDetailsD(vendor)"  src=images/{{vendor.imageName}} class="img-responsive" alt="wedding-photography-image"/>-->
+                        <!--<figcaption>{{vendor.firstname}}</figcaption></figure></li>-->
+                    <li ng-repeat="vendor in dvendors"><figure><img ng-click="showDetailsD(vendor)"  src=images/{{vendor.imageName}} class="img-responsive" alt="wedding-photography-image"/>
+                        <figcaption>{{vendor.firstname}}</figcaption></figure></li>
+
+
+
+                </ul>
+            </div>
+
+            <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+            <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+        </div>
+    </div>
+
+    <div class="toggle-details" ng-show="showDecoration" style="border : 5px black;">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2" id="highlightDiv">
+                <br>
+                <br>
+                <div class="product">
+                <div class="col-xs-6">
+                    <img src=images/{{clickedVendor.imageName}} class="img-responsive">
+                </div>
+
+                <div class="col-xs-5">
+                    <p><strong>Name :</strong> {{clickedVendor.firstname}}</p>
+                    <p><strong>Information :</strong> {{clickedVendor.description}}</p>
+                    <div style='overflow-x:auto; height:180px;'>
+                        <div class="well well-sm">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img  src="images/photographers/c1.jpg" class="media-object" height="50" width="50">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Person 1</h4>
+                                    <p>Did a great job!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="well well-sm">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="images/photographers/c2.jpg" class="media-object" height="50" width="50">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Person 2</h4>
+                                    <p>One of our best experience with him!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="well well-sm">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="images/photographers/c3.jpg" class="media-object" height="50" width="50">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Person 3</h4>
+                                    <p>Highly recommend his work...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="commentSection">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                    <p>Would you like to rate the photographer?</p>
+                                    <fieldset class="rating">
+
+                                        <input type="radio" id="star4" name="rating" value="4" />
+                                        <label for="star4" title="Pretty good">4 stars</label>
+                                        <input type="radio" id="star3" name="rating" value="3" />
+                                        <label for="star3" title="Meh">3 stars</label>
+                                        <input type="radio" id="star2" name="rating" value="2" />
+                                        <label for="star2" title="Kinda bad">2 stars</label>
+                                        <input type="radio" id="star1" name="rating" value="1" />
+                                        <label for="star1" title="Sucks big time">1 star</label>
+                                    </fieldset>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-show="cartMsg" class="alert alert-success">
+                        <strong> This photographer is added to your event shopping cart </strong>
+                    </div>
+                    <div class="venbuttons">
+                        <button  class="btn btn-primary btn-sm" ng-disabled="user.usertype!='user' && user==null" ng-click="addCart()"><span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart</button> &nbsp; &nbsp; <a class="btn btn-primary btn-sm"  href="/showgal" ><span class="glyphicon glyphicon-picture"></span>View Gallery</a>
+                    </div>
+
+                </div>
+                <div class="col-xs-1">
+                    <span id="closeMe" ng-click="closeMe()" class="glyphicon glyphicon-remove"></span>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="css/jcarousel.responsive.css">
+
+
+<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="js/jcarousel.responsive.js"></script>
+    <script type="text/javascript" src="js/cartadd.js"></script>
+
+

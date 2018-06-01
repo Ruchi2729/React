@@ -1,0 +1,21 @@
+{
+  "name": "mern-eventmgmt-server",
+  "main": "server.js",
+  "scripts": {
+    "client": "cd client && npm start",
+    "server": "node server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "body-parser": "~1.4.2",
+    "bootstrap": "^4.1.1",
+    "express": "~4.5.1",
+    "jquery": "^3.3.1",
+    "method-override": "~2.0.2",
+    "mongoose": "~3.8.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  }
+}
+s

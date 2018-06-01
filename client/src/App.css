@@ -1,0 +1,171 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+.player{
+
+  height: 50%;
+  width: 100%;
+  top: 0;
+  padding: none;
+/* optional depending on what you want to do in your app */
+  background-image:url("32.jpg");
+  background-repeat: repeat;
+  display: block;
+
+
+
+}
+
+.login{
+
+  height: 100%;
+  width: 100%;
+  padding: none;
+  position: absolute; /* optional depending on what you want to do in your app */
+  background-image:url("loginimage.jpg");
+  color:white;
+
+
+}
+
+.container{
+   padding: 0px;
+   width:100%;
+  height:100%;
+  background-color: white;
+ }
+.container1{
+  padding: 0px;
+  width:100%;
+  height:100%;
+  background-color: white;
+
+}
+main{
+  padding: 0px;
+  width:100%;
+  height:100%;
+  position: absolute;
+  background-color: lightslategrey;
+}
+
+.navbar {
+  margin-bottom: 0;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 4px;
+  border-radius: 0;
+  background-color: black;
+
+}
+
+h4,h1 {
+  font-size: 30px;
+  line-height: 1.375em;
+  font-weight: 500;
+  font-style: italic;
+  margin: 70px 0;
+  color:white;
+  text-align: center;
+}
+
+h3 {
+  font-size: 25px;
+  line-height: 1.375em;
+  font-weight: 500;
+  font-style: italic;
+  margin: 70px 0;
+  color:white;
+  text-align: center;
+}
+form.login{
+  width:50%;
+  height:50%;
+  position:relative;
+  background-color: black;
+  opacity: 0.5;
+
+
+}
+.srch{
+  width:100%;
+  height:100%;
+  position:absolute;
+  background-color: black;
+  opacity: 0.5;
+
+
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
+.homeContainer {
+  width:100%;
+  height:100%;
+  background-color: grey;
+
+
+}
+
+#bg_container{
+  width:100%;
+  height:100%;
+  background-color: black;
+  opacity: 0.5;
+  position:absolute;
+
+
+}
+
+#result{
+  background-color: black;
+  width:100%;
+  height:50%;
+  position:relative;
+  display:block;
+
+}
+
+.resultblock{
+  width:100%;
+  height:100%;
+  display:block;
+  align-self: center;
+
+
+
+}
